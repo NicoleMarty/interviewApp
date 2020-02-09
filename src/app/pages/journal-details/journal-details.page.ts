@@ -63,4 +63,20 @@ export class JournalDetailsPage implements OnInit {
       })
     }
   }
+
+  async removeJournal () {
+    const loading = await this.loadingController.create({
+      message: 'Deleting Journal..'
+    })
+    await loading.present()
+
+    if (this.journalId) {
+      this.journalService
+        .removeJournal(this.journal, this.journalId)
+        .then(() => {
+          loading.dismiss()
+          this.nav.back()
+        })
+    }
+  }
 }

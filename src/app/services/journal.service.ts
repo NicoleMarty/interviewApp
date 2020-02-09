@@ -51,7 +51,7 @@ export class JournalService {
     return this.journalsCollection.add(journal)
   }
 
-  removeJournal (id) {
+  removeJournal (journal: Journal, id: string) {
     return this.journalsCollection.doc(id).delete()
   }
 }
