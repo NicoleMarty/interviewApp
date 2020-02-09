@@ -54,12 +54,12 @@ export class JournalDetailsPage implements OnInit {
         .updateJournal(this.journal, this.journalId)
         .then(() => {
           loading.dismiss()
-          this.nav.back('home')
+          this.nav.back('/')
         })
     } else {
       this.journalService.addJournal(this.journal).then(() => {
         loading.dismiss()
-        this.nav.back('home')
+        this.nav.back('/')
       })
     }
   }
