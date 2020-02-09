@@ -17,7 +17,7 @@ export class HomePage implements OnInit {
     })
   }
 
-  remove (item) {
-    this.journalService.removeJournal(item.id)
+  remove (journal, id) {
+    this.journalService.removeJournal(journal.id, id)
   }
 }
