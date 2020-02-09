@@ -27,6 +27,7 @@
     "angularfire2": "^5.4.2",
     "core-js": "^2.5.4",
     "firebase": "^7.8.1",
+    "firebase-tools": "^7.12.1",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -60,5 +61,12 @@
   },
   "description": "An Ionic project",
   "main": "karma.conf.js",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicoleMarty/interviewApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NicoleMarty/interviewApp/issues"
+  }
 }
