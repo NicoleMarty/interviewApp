@@ -1,9 +1,21 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>journalDetails</ion-title>
+  <ion-toolbar color='dark'>
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref='home'></ion-back-button>
+    </ion-buttons>
+    <ion-title>Journal Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class='padding'>
+  <ion-list lines='full'>
+    <ion-item>
+      <ion-input required type='text' placeholder='Title' [(ngModel)]='journal.title'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type='text' placeholder='Tell us about it' [(ngModel)]='journal.content'></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand='full' (click)='saveJournal()'>Save</ion-button>
 
 </ion-content>
