@@ -1,0 +1,7 @@
+{
+  "name": "interviewApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
