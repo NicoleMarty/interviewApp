@@ -19,12 +19,12 @@ export interface Journal {
 export class JournalService {
   private journalsCollection: AngularFirestoreCollection<Journal>
 
-  private jounrals: Observable<Jounral[]>
+  private journals: Observable<Journal[]>
 
   constructor (db: AngularFirestore) {
     this.journalsCollection = db.collection<Journal>('journals')
 
-    this.jounrals = this.journalsCollection.snapshotChanges().pipe(
+    this.journals = this.journalsCollection.snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
           const data = a.payload.doc.data()
@@ -44,10 +44,10 @@ export class JournalService {
   }
 
   updateJournal (journal: Journal, id: string) {
-    return this.jounralsCollection.doc(id).update(journal)
+    return this.journalsCollection.doc(id).update(journal)
   }
 
-  addJournal (todo: Journal) {
+  addJournal (journal: Journal) {
     return this.journalsCollection.add(journal)
   }
 
