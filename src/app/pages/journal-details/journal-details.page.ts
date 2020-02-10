@@ -10,9 +10,9 @@ import { NavController, LoadingController } from '@ionic/angular'
 })
 export class JournalDetailsPage implements OnInit {
   journal: Journal = {
-    title: 'Title your post',
+    title: '',
     createdAt: new Date().getTime(),
-    content: 'Tell us about it'
+    content: ''
   }
 
   journalId = null
