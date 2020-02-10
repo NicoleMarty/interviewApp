@@ -17,6 +17,22 @@ const routes: Routes = [
     path: 'details',
     loadChildren:
       './pages/journal-details/journal-details.module#JournalDetailsPageModule'
+  },
+  {
+    path: 'tab4',
+    loadChildren: () => import('./tab4/tab4.module').then(m => m.Tab4PageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () =>
+      import('./pages/signup/signup.module').then(m => m.SignupPageModule)
+  },
+  {
+    path: 'reset-password',
+    loadChildren: () =>
+      import('./pages/reset-password/reset-password.module').then(
+        m => m.ResetPasswordPageModule
+      )
   }
 ]
 

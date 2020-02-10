@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms'
 
 import { IonicModule } from '@ionic/angular'
 
-import { Tab4PageRoutingModule } from './tab4-routing.module'
+import { LoginPageRoutingModule } from './login-routing.module'
 
-import { Tab4Page } from './tab4.page'
+import { LoginPage } from './login.page'
 import { AuthModule } from 'src/app/shared-modules/auth.module'
 
 @NgModule({
@@ -14,9 +14,9 @@ import { AuthModule } from 'src/app/shared-modules/auth.module'
     CommonModule,
     FormsModule,
     IonicModule,
-    Tab4PageRoutingModule,
+    LoginPageRoutingModule,
     AuthModule
   ],
-  declarations: [Tab4Page]
+  declarations: [LoginPage]
 })
-export class Tab4PageModule {}
+export class LoginPageModule {}

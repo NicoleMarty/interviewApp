@@ -5,29 +5,30 @@ import { AuthFormComponent } from 'src/app/components/auth-form/auth-form.compon
 import { Router } from '@angular/router'
 
 @Component({
-  selector: 'app-tab4',
-  templateUrl: './tab4.page.html',
-  styleUrls: ['./tab4.page.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.page.html',
+  styleUrls: ['./signup.page.scss']
 })
-export class Tab4Page implements OnInit {
-  @ViewChild(AuthFormComponent, { static: false }) loginForm: AuthFormComponent
+export class SignupPage implements OnInit {
+  @ViewChild(AuthFormComponent, { static: false })
+  signupForm: AuthFormComponent
 
   constructor (private authService: AuthService, private router: Router) {}
 
   ngOnInit () {}
 
-  async loginUser (credentials: UserCredential): Promise<void> {
+  async signupUser (credentials: UserCredential): Promise<void> {
     try {
-      const UserCredential: firebase.auth.UserCredential = await this.authService.login(
+      const UserCredential: firebase.auth.UserCredential = await this.authService.signup(
         credentials.email,
         credentials.password
       )
       this.authService.userId = UserCredential.user.uid
-      await this.loginForm.hideLoading()
+      await this.signupForm.hideLoading()
       this.router.navigateByUrl('tab1')
     } catch (error) {
-      await this.loginForm.hideLoading()
-      this.loginForm.handleError(error)
+      await this.signupForm.hideLoading()
+      this.signupForm.handleError(error)
     }
   }
 }
