@@ -62,7 +62,6 @@ export class PhotoService {
     })
 
     const savedImageFile = await this.savePicture(capturedPhoto)
-
     // Add new photo to Photos array
     this.photos.unshift(savedImageFile)
 

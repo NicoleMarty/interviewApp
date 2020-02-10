@@ -1,6 +1,17 @@
 import { Component } from '@angular/core'
-import { ActionSheetController } from '@ionic/angular'
 import { PhotoService } from '../services/photo.service'
+import { ActionSheetController } from '@ionic/angular'
+
+import {
+  Plugins,
+  CameraResultType,
+  Capacitor,
+  FilesystemDirectory,
+  CameraPhoto,
+  CameraSource
+} from '@capacitor/core'
+
+const { Camera, Filesystem, Storage } = Plugins
 
 @Component({
   selector: 'app-tab2',
@@ -12,15 +23,22 @@ export class Tab2Page {
     public photoService: PhotoService,
     public actionSheetController: ActionSheetController
   ) {}
-
   ngOnInit () {
     this.photoService.loadSaved()
   }
-
   public async showActionSheet (photo, position) {
     const actionSheet = await this.actionSheetController.create({
       header: 'Photos',
       buttons: [
+        {
+          // TO DO: ADD TO JOURNAL POST
+          text: 'Add to Journal',
+          role: 'create',
+          icon: 'add',
+          handler: () => {
+            this.photoService.deletePicture(photo, position)
+          }
+        },
         {
           text: 'Delete',
           role: 'destructive',
