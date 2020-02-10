@@ -13,7 +13,10 @@
       <ion-input required type='text' placeholder='Title' [(ngModel)]='journal.title'></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input required type='text' placeholder='Tell us about it' [(ngModel)]='journal.content'></ion-input>
+      <ion-textarea rows=20 auto-grow=true required type='text' placeholder='Tell us about it'
+        [(ngModel)]='journal.content'>
+      </ion-textarea>
+      <ion-textarea></ion-textarea>
     </ion-item>
   </ion-list>
   <ion-button color='dark' expand='full' (click)='saveJournal()'>Save</ion-button>
