@@ -24,5 +24,12 @@
         <ion-button type="submit" (click)="logIn(email, password)" expand="block">Login</ion-button>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" (click)="authService.GoogleAuth()" expand="block">
+          Login with Google
+        </ion-button>
+      </ion-col>
+    </ion-row>
   </form>
 </ion-content>
