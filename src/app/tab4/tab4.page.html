@@ -1,19 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title>
+      Journal
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <app-auth-form #loginForm (formSubmitted)='loginUser($event)' [actionButtonText]='"Login"'>
-  </app-auth-form>
+  <ion-list>
+    <ng-container *ngIf='!journals || journals.length == 0'>
+      <div *ngFor='let n of [0,1,2]' class='padding'>
+        <ion-skeleton-text></ion-skeleton-text>
+        <p>
+          <ion-skeleton-text class='fake-skeleton'></ion-skeleton-text>
+        </p>
+      </div>
+    </ng-container>
 
-  <ion-button expand='block' fill='clear' routerLink='/signUp'>
-    Create a new account
-  </ion-button>
+    <ion-item-sliding *ngFor='let item of journals'>
+      <ion-item lines='inset' button [routerLink]="['/details', item.id]">
+        <ion-label>
+          {{ item.title }}
+          <p>{{item.createdAt | date:'short'}}</p>
+        </ion-label>
+        <ion-note slot='bottom' color='dark'>{{item.content}}</ion-note>
+      </ion-item>
+    </ion-item-sliding>
 
-  <ion-button expand='block' fill='clear' routerLink='/reset-password'>
-    I forgot my password. Per usual.
-  </ion-button>
+  </ion-list>
+
+  <ion-fab vertical='bottom' horizontal='end' slot='fixed'>
+    <ion-fab-button routerLink='/details' routerDirection='forward'>
+      <ion-icon name='add'></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

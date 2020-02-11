@@ -7,32 +7,15 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-  {
-    path: 'details/:id',
-    loadChildren:
-      './pages/journal-details/journal-details.module#JournalDetailsPageModule'
-  },
-  {
-    path: 'details',
-    loadChildren:
-      './pages/journal-details/journal-details.module#JournalDetailsPageModule'
-  },
-  {
-    path: 'tab4',
-    loadChildren: () => import('./tab4/tab4.module').then(m => m.Tab4PageModule)
-  },
+  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   {
     path: 'signup',
-    loadChildren: () =>
-      import('./pages/signup/signup.module').then(m => m.SignupPageModule)
+    loadChildren: './pages/signup/signup.module#SignupPageModule'
   },
   {
     path: 'reset-password',
-    loadChildren: () =>
-      import('./pages/reset-password/reset-password.module').then(
-        m => m.ResetPasswordPageModule
-      )
+    loadChildren:
+      './pages/reset-password/reset-password.module#ResetPasswordPageModule'
   }
 ]
 

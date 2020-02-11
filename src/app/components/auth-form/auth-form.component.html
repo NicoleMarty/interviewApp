@@ -2,7 +2,7 @@
   <ion-item>
     <ion-label position='stacked'>Email</ion-label>
     <ion-input formControlName='email' type='email' placeholder='Your email address'
-      [class.invalid]='!authForm.controls["email"].valid && authForm.contorls["email"].touched'>
+      [class.invalid]='!authForm.control["email"].valid && authForm.contorl["email"].touched'>
     </ion-input>
   </ion-item>
   <ion-item class='error-message' *ngIf='!authForm.controls["email"].valid && authForm.controls["email"].touched'>
