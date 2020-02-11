@@ -1,8 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core'
-import { UserCredential } from 'src/app/models/user'
-import { AuthService } from 'src/app/services/auth.service'
-import { AuthFormComponent } from 'src/app/components/auth-form/auth-form.component'
+import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
+import { AuthenticationService } from 'src/app/shared/auth.service'
 
 @Component({
   selector: 'app-signup',
@@ -10,25 +8,23 @@ import { Router } from '@angular/router'
   styleUrls: ['./signup.page.scss']
 })
 export class SignupPage implements OnInit {
-  @ViewChild(AuthFormComponent, { static: false })
-  signupForm: AuthFormComponent
-
-  constructor (private authService: AuthService, private router: Router) {}
+  constructor (
+    public authService: AuthenticationService,
+    public router: Router
+  ) {}
 
   ngOnInit () {}
 
-  async signupUser (credentials: UserCredential): Promise<void> {
-    try {
-      const UserCredential: firebase.auth.UserCredential = await this.authService.signup(
-        credentials.email,
-        credentials.password
-      )
-      this.authService.userId = UserCredential.user.uid
-      await this.signupForm.hideLoading()
-      this.router.navigateByUrl('tab1')
-    } catch (error) {
-      await this.signupForm.hideLoading()
-      this.signupForm.handleError(error)
-    }
+  signUp (email, password) {
+    this.authService
+      .RegisterUser(email.value, password.value)
+      .then(res => {
+        // Do something here
+        this.authService.SendVerificationMail()
+        this.router.navigate(['verify-email'])
+      })
+      .catch(error => {
+        window.alert(error.message)
+      })
   }
 }

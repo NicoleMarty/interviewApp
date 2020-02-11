@@ -12,11 +12,6 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: './pages/signup/signup.module#SignupPageModule'
   },
-  {
-    path: 'reset-password',
-    loadChildren:
-      './pages/reset-password/reset-password.module#ResetPasswordPageModule'
-  },
   { path: 'tab4', loadChildren: './tab4/tab4.module#Tab4PageModule' },
   {
     path: 'details/:id',
@@ -27,6 +22,13 @@ const routes: Routes = [
     path: 'details',
     loadChildren:
       './pages/journal-details/journal-details.module#JournalDetailsPageModule'
+  },
+  {
+    path: 'verify-email',
+    loadChildren: () =>
+      import('./pages/verify-email/verify-email.module').then(
+        m => m.VerifyEmailPageModule
+      )
   }
 ]
 

@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common'
 import { ReactiveFormsModule } from '@angular/forms'
 
 import { TabsPageRoutingModule } from './tabs-routing.module'
-import { AuthModule } from '../shared-modules/auth.module'
 
 import { TabsPage } from './tabs.page'
 
@@ -13,8 +12,7 @@ import { TabsPage } from './tabs.page'
     IonicModule,
     CommonModule,
     ReactiveFormsModule,
-    TabsPageRoutingModule,
-    AuthModule
+    TabsPageRoutingModule
   ],
   declarations: [TabsPage]
 })

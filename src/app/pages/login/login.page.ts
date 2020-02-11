@@ -1,8 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core'
-import { UserCredential } from 'src/app/models/user'
-import { AuthService } from 'src/app/services/auth.service'
-import { AuthFormComponent } from 'src/app/components/auth-form/auth-form.component'
+import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
+import { AuthenticationService } from 'src/app/shared/auth.service'
 
 @Component({
   selector: 'app-login',
@@ -10,24 +8,26 @@ import { Router } from '@angular/router'
   styleUrls: ['./login.page.scss']
 })
 export class LoginPage implements OnInit {
-  @ViewChild(AuthFormComponent, { static: false }) loginForm: AuthFormComponent
-
-  constructor (private authService: AuthService, private router: Router) {}
+  constructor (
+    public authService: AuthenticationService,
+    public router: Router
+  ) {}
 
   ngOnInit () {}
 
-  async loginUser (credentials: UserCredential): Promise<void> {
-    try {
-      const UserCredential: firebase.auth.UserCredential = await this.authService.login(
-        credentials.email,
-        credentials.password
-      )
-      this.authService.userId = UserCredential.user.uid
-      await this.loginForm.hideLoading()
-      this.router.navigateByUrl('tab1')
-    } catch (error) {
-      await this.loginForm.hideLoading()
-      this.loginForm.handleError(error)
-    }
+  logIn (email, password) {
+    this.authService
+      .SignIn(email.value, password.value)
+      .then(res => {
+        if (this.authService.isEmailVerified) {
+          this.router.navigate(['dashboard'])
+        } else {
+          window.alert('Email is not verified')
+          return false
+        }
+      })
+      .catch(error => {
+        window.alert(error.message)
+      })
   }
 }
