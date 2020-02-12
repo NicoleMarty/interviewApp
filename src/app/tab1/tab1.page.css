@@ -4,10 +4,11 @@ ion-content {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  font: "Raleway";
 }
 
 h1 {
-  font-size: 72px;
+  font-size: 64px;
   font-weight: 800;
   margin-left: 1rem;
   margin-bottom: 0rem;
