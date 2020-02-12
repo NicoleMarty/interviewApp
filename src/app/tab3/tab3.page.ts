@@ -8,7 +8,7 @@ import { Observable } from 'rxjs'
   styleUrls: ['./tab3.page.scss']
 })
 export class Tab3Page implements OnInit {
-  private ideas: Observable<Idea[]>
+  public ideas: Observable<Idea[]>
 
   constructor (private ideaService: IdeaService) {}
 
