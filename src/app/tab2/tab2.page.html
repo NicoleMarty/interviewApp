@@ -8,6 +8,7 @@
 
 <ion-content>
   <ion-grid>
+    <ion-img src='gs://interviewapp-5b2db.appspot.com/'></ion-img>'
     <ion-row>
       <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
         <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}" (click)="showActionSheet(photo, position)">
