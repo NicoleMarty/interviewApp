@@ -12,7 +12,10 @@ import { AppRoutingModule } from './app-routing.module'
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireAuthModule } from 'angularfire2/auth'
 import { AngularFireDatabaseModule } from '@angular/fire/database'
-import { AngularFirestoreModule } from 'angularfire2/firestore'
+import {
+  AngularFirestoreModule,
+  FirestoreSettingsToken
+} from 'angularfire2/firestore'
 import { environment } from '../environments/environment'
 
 @NgModule({
@@ -31,6 +34,7 @@ import { environment } from '../environments/environment'
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: FirestoreSettingsToken, useValue: {} },
     AngularFirestoreModule
   ],
   bootstrap: [AppComponent]
