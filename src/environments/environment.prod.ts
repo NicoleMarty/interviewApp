@@ -6,6 +6,7 @@ export const environment = {
     databaseURL: 'https://interviewapp-5b2db.firebaseio.com',
     projectId: 'interviewapp-5b2db',
     storageBucket: 'interviewapp-5b2db.appspot.com',
-    messagingSenderId: '416875217824'
+    messagingSenderId: '416875217824',
+    measurementId: 'G-1JVWLWRE03'
   }
 }

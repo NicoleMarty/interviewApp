@@ -31,15 +31,6 @@ export class Tab2Page {
       header: 'Photos',
       buttons: [
         {
-          // TO DO: ADD TO JOURNAL POST
-          text: 'Add to Journal',
-          role: 'create',
-          icon: 'add',
-          handler: () => {
-            this.photoService.deletePicture(photo, position)
-          }
-        },
-        {
           text: 'Delete',
           role: 'destructive',
           icon: 'trash',
