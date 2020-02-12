@@ -1,10 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot='end'>
-      <ion-button class='signup' href=' /signup'>
-        <h2>Sign up</h2>
-      </ion-button>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
     </ion-buttons>
+    <ion-title>
+      LEFT | BRAIN
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -31,9 +32,14 @@
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="danger" (click)="authService.GoogleAuth()" expand="block">
-            Login with Google
+          <ion-button type="submit" color="secondary" (click)="authService.GoogleAuth()" expand="block">
+            Google Login
           </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button color='danger' type="button" href='./signup' expand="block">create an account</ion-button>
         </ion-col>
       </ion-row>
     </form>

@@ -5,7 +5,7 @@ import { AuthenticationService } from 'src/app/shared/auth.service'
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
-  styleUrls: ['./signup.page.scss']
+  styleUrls: ['./signup.page.css']
 })
 export class SignupPage implements OnInit {
   constructor (
