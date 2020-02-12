@@ -1,6 +1,6 @@
 ion-content {
   --background: none;
-  background-image: url("../../assets/images/homeimg.jpg");
+  background-image: url("../../../assets/images/homeimg.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,7 +15,6 @@ h1 {
   opacity: 50%;
 }
 
-h2:hover {
-  background-color: #2d2a32;
-  color: #fcfcfc;
+a ion-icon {
+  color: #000000;
 }
