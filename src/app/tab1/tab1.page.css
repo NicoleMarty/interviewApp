@@ -1,0 +1,16 @@
+ion-content {
+  --background: none;
+  background-image: url("../../assets/images/homeimg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 78px;
+  font-weight: 800;
+  margin-left: 1rem;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+  opacity: 50%;
+}
