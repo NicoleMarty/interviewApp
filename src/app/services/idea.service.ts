@@ -12,14 +12,13 @@ export interface Idea {
   id?: string
   name: string
   notes: string
-  image: string
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class IdeaService {
-  private ideas: Observable<Idea[]>
+  public ideas: Observable<Idea[]>
   private ideaCollection: AngularFirestoreCollection<Idea>
 
   constructor (private afs: AngularFirestore) {
@@ -59,7 +58,7 @@ export class IdeaService {
   updateIdea (idea: Idea): Promise<void> {
     return this.ideaCollection
       .doc(idea.id)
-      .update({ name: idea.name, notes: idea.notes, image: idea.image })
+      .update({ name: idea.name, notes: idea.notes })
   }
 
   deleteIdea (id: string): Promise<void> {

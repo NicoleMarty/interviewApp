@@ -3,17 +3,17 @@
     <ion-buttons slot='start'>
       <ion-back-button defaultHref='home'></ion-back-button>
     </ion-buttons>
-    <ion-title>Note Details</ion-title>
+    <ion-title>Supply Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class='padding'>
   <ion-list lines='full'>
     <ion-item>
-      <ion-input required type='text' placeholder='Title' [(ngModel)]='journal.title'></ion-input>
+      <ion-input required type='text' placeholder='Supply' [(ngModel)]='journal.title'></ion-input>
     </ion-item>
     <ion-item>
-      <ion-textarea required type='text' rows=20 placeholder='Tell us about it' [(ngModel)]='journal.content'>
+      <ion-textarea required type='text' rows=20 placeholder='What needed for and why?' [(ngModel)]='journal.content'>
       </ion-textarea>
     </ion-item>
   </ion-list>
