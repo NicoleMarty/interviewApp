@@ -12,18 +12,24 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+            loadChildren: '../tab1/tab1.module#Tab1PageModule'
           }
         ]
+      },
+      {
+        path: 'tab1/login',
+        loadChildren: '../tab1/login/login.module#LoginPageModule'
+      },
+      {
+        path: 'tab1/signup',
+        loadChildren: '../tab1/signup/signup.module#SignupPageModule'
       },
       {
         path: 'tab2',
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+            loadChildren: '../tab2/tab2.module#Tab2PageModule'
           }
         ]
       },
@@ -32,8 +38,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+            loadChildren: '../tab3/tab3.module#Tab3PageModule'
           }
         ]
       },
@@ -42,8 +47,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () =>
-              import('../tab4/tab4.module').then(m => m.Tab4PageModule)
+            loadChildren: '../tab4/tab4.module#Tab4PageModule'
           }
         ]
       },

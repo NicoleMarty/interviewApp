@@ -1,11 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+    <ion-title>Sign Up</ion-title>
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref='/tabs/tab1/login'></ion-back-button>
     </ion-buttons>
-    <ion-title>
-      LEFT | BRAIN
-    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -33,7 +31,7 @@
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-button color='primary' type="button" href='./login' expand="block">I have an account</ion-button>
+          <ion-button color='primary' defaultHref='/tabs/tab1/login' expand="block">I have an account</ion-button>
         </ion-col>
       </ion-row>
     </form>

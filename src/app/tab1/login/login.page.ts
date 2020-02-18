@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { AuthenticationService } from '../../services/auth.service'
+import { Tab3Page } from '../../tab3/tab3.page'
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginPage implements OnInit {
       .SignIn(email.value, password.value)
       .then(res => {
         if (this.authenticationService.isEmailVerified) {
-          this.router.navigate(['tab2'])
+          this.router.navigate([Tab3Page])
         } else {
           window.alert('Email is not verified')
           return false

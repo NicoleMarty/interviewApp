@@ -1,13 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button>
-
-      </ion-back-button>
+    <ion-title>Login</ion-title>
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref='/tabs/tab1'></ion-back-button>
     </ion-buttons>
-    <ion-title>
-      LEFT | BRAIN
-    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -41,7 +37,8 @@
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-button color='danger' type="button" href='./signup' expand="block">create an account</ion-button>
+          <ion-button color='danger' routerLink='/tabs/tab1/signup' routerDirection='forward' expand="block">create an
+            account</ion-button>
         </ion-col>
       </ion-row>
     </form>
