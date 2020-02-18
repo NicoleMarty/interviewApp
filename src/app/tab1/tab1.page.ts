@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { AuthenticationService } from '../shared/auth.service'
+import { AuthenticationService } from '../services/auth.service'
 
 @Component({
   selector: 'app-tab1',
@@ -7,7 +7,7 @@ import { AuthenticationService } from '../shared/auth.service'
   styleUrls: ['tab1.page.css']
 })
 export class Tab1Page implements OnInit {
-  constructor (public authService: AuthenticationService) {}
+  constructor (public authenticationService: AuthenticationService) {}
 
   ngOnInit () {}
 }

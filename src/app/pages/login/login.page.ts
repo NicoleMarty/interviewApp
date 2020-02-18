@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
-import { AuthenticationService } from 'src/app/shared/auth.service'
+import { AuthenticationService } from '../../services/auth.service'
 
 @Component({
   selector: 'app-login',
@@ -9,17 +9,17 @@ import { AuthenticationService } from 'src/app/shared/auth.service'
 })
 export class LoginPage implements OnInit {
   constructor (
-    public authService: AuthenticationService,
+    public authenticationService: AuthenticationService,
     public router: Router
   ) {}
 
   ngOnInit () {}
 
   logIn (email, password) {
-    this.authService
+    this.authenticationService
       .SignIn(email.value, password.value)
       .then(res => {
-        if (this.authService.isEmailVerified) {
+        if (this.authenticationService.isEmailVerified) {
           this.router.navigate(['tab2'])
         } else {
           window.alert('Email is not verified')
