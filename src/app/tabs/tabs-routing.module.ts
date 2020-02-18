@@ -43,6 +43,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'tab3/art',
+        loadChildren: '../tab3/art/art.module#ArtPageModule'
+      },
+      {
+        path: 'tab3/art/:id',
+        loadChildren:
+          '../tab3/art-details/art-details.module#ArtDetailsPageModule'
+      },
+      {
         path: 'tab4',
         children: [
           {

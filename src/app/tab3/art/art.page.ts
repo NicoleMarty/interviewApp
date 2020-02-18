@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { PhotoService } from '../services/photo.service'
+import { PhotoService } from '../../services/photo.service'
 import { ActionSheetController } from '@ionic/angular'
 
 import {
@@ -14,11 +14,11 @@ import {
 const { Camera, Filesystem, Storage } = Plugins
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-art',
+  templateUrl: 'art.page.html',
+  styleUrls: ['art.page.scss']
 })
-export class Tab3Page {
+export class ArtPage {
   constructor (
     public photoService: PhotoService,
     public actionSheetController: ActionSheetController

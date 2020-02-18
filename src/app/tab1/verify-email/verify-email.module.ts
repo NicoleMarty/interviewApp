@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
-import { RouterModule } from '@angular/router'
 import { IonicModule } from '@ionic/angular'
-import { Tab3Page } from './tab3.page'
+import { VerifyEmailPageRoutingModule } from './verify-email-routing.module'
+import { VerifyEmailPage } from './verify-email.page'
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild([{ path: '', component: Tab3Page }])
+    VerifyEmailPageRoutingModule
   ],
-  declarations: [Tab3Page]
+  declarations: [VerifyEmailPage]
 })
-export class Tab3PageModule {}
+export class VerifyEmailPageModule {}

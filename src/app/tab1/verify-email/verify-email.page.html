@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref='/tabs/tab1/signup'></ion-back-button>
     </ion-buttons>
     <ion-title>Verify Email</ion-title>
   </ion-toolbar>
@@ -14,7 +14,7 @@
       <p>
         Please check your email and click on the link to verfiy your email address.
       </p>
-      <ion-button type="submit" (click)="authService.SendVerificationMail()" expand="block">
+      <ion-button type="submit" (click)="authenticationService.SendVerificationMail()" expand="block">
         Resend Verification Email
       </ion-button>
     </ion-row>
