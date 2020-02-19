@@ -28,7 +28,7 @@ import { environment } from '../environments/environment'
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    AngularFirestoreModule
+    AngularFirestoreModule.enablePersistence()
   ],
   providers: [
     StatusBar,
