@@ -21,7 +21,7 @@ export class LoginPage implements OnInit {
       .SignIn(email.value, password.value)
       .then(res => {
         if (this.authenticationService.isEmailVerified) {
-          this.router.navigate([Tab3Page])
+          this.router.navigate(['../tabs/tab3'])
         } else {
           window.alert('Email is not verified')
           return false
