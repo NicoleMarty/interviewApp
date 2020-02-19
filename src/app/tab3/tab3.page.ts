@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { AuthenticationService } from '../services/auth.service'
 import { PhotoService } from '../services/photo.service'
 import { ActionSheetController } from '@ionic/angular'
 
@@ -20,6 +21,7 @@ const { Camera, Filesystem, Storage } = Plugins
 })
 export class Tab3Page {
   constructor (
+    private authenticationService: AuthenticationService,
     public photoService: PhotoService,
     public actionSheetController: ActionSheetController
   ) {}

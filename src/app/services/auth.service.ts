@@ -86,7 +86,7 @@ export class AuthenticationService {
       .signInWithPopup(provider)
       .then(result => {
         this.ngZone.run(() => {
-          this.router.navigate(['tab4'])
+          this.router.navigate(['tab3'])
         })
         this.SetUserData(result.user)
       })
@@ -115,8 +115,8 @@ export class AuthenticationService {
   // Sign-out
   SignOut () {
     return this.ngFireAuth.auth.signOut().then(() => {
-      localStorage.removeItem('user')
-      this.router.navigate(['login'])
+      localStorage.removeItem('users')
+      this.router.navigate(['/'])
     })
   }
 }
