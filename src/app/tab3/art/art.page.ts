@@ -35,7 +35,7 @@ export class ArtPage {
           text: 'Add Note',
           icon: 'add',
           handler: () => {
-            this.photoService.addNote()
+            // TO DO
           }
         },
         {

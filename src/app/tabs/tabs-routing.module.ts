@@ -52,13 +52,13 @@ const routes: Routes = [
           '../tab3/art-details/art-details.module#ArtDetailsPageModule'
       },
       {
-        path: 'tab4',
-        children: [
-          {
-            path: '',
-            loadChildren: '../tab4/tab4.module#Tab4PageModule'
-          }
-        ]
+        path: 'tab3/supplies',
+        loadChildren: '../tab3/supplies/supplies.module#SupplyPageModule'
+      },
+      {
+        path: 'tab3/supplies/:id',
+        loadChildren:
+          '../tab3/supplies-details/supplies-details.module#SupplyDetailsPageModule'
       },
       {
         path: '',

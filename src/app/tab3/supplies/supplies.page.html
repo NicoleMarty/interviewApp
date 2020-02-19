@@ -3,12 +3,15 @@
     <ion-title>
       Supplies List
     </ion-title>
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref='/tabs/tab3'></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ng-container *ngIf='!journals || journals.length == 0'>
+    <ng-container *ngIf='!supplies || supplies.length == 0'>
       <div *ngFor='let n of [0,1,2]' class='padding'>
         <ion-skeleton-text></ion-skeleton-text>
         <p>
@@ -17,8 +20,8 @@
       </div>
     </ng-container>
 
-    <ion-item-sliding *ngFor='let item of journals'>
-      <ion-item lines='inset' button [routerLink]="['/details', item.id]">
+    <ion-item-sliding *ngFor='let item of supplies'>
+      <ion-item lines='inset' button [routerLink]="[':id', item.id]">
         <ion-label>
           {{ item.title }}
           <p>{{item.createdAt | date:'short'}}</p>
@@ -30,7 +33,7 @@
   </ion-list>
 
   <ion-fab vertical='bottom' horizontal='end' slot='fixed'>
-    <ion-fab-button routerLink='/details' routerDirection='forward'>
+    <ion-fab-button routerLink=':id' routerDirection='forward'>
       <ion-icon name='add'></ion-icon>
     </ion-fab-button>
   </ion-fab>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color='dark'>
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref='tabs/tab3/supplies'></ion-back-button>
+    </ion-buttons>
+    <ion-title>Supply Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class='padding'>
+  <ion-list lines='full'>
+    <ion-item>
+      <ion-input required type='text' placeholder='Supply' [(ngModel)]='supply.title'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea required type='text' rows=20 placeholder='What needed for and why?' [(ngModel)]='supply.content'>
+      </ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-button color='dark' expand='full' (click)='saveSupply()'>Save</ion-button>
+  <ion-button color='dark' expand='full' (click)='removeSupply()'>Delete</ion-button>
+
+</ion-content>
