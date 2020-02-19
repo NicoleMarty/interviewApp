@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { PhotoService } from '../../services/photo.service'
+import { ArtService } from '../../services/art.service'
 import { ActionSheetController } from '@ionic/angular'
 
 import {
@@ -30,6 +31,13 @@ export class ArtPage {
     const actionSheet = await this.actionSheetController.create({
       header: 'Photos',
       buttons: [
+        {
+          text: 'Add Note',
+          icon: 'add',
+          handler: () => {
+            this.photoService.addNote()
+          }
+        },
         {
           text: 'Delete',
           role: 'destructive',
