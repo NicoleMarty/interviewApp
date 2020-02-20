@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: ArtPage
+  },
+  {
+    path: 'upload',
+    loadChildren: () => import('./upload/upload.module').then( m => m.UploadPageModule)
   }
 ]
 

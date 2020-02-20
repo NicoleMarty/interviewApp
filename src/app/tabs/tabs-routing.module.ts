@@ -61,6 +61,10 @@ const routes: Routes = [
           '../tab3/supplies-details/supplies-details.module#SupplyDetailsPageModule'
       },
       {
+        path: 'tab3/art/upload',
+        loadChildren: '../tab3/art/upload/upload.module#UploadPageModule'
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
