@@ -77,7 +77,7 @@ export class UploadPage {
     const path = `freakyStorage/${new Date().getTime()}_${file.name}`
 
     // Totally optional metadata
-    const customMetadata = { app: 'Freaky Image Upload Demo' }
+    const customMetadata = { app: 'Image Upload' }
 
     //File reference
     const fileRef = this.storage.ref(path)

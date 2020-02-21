@@ -17,7 +17,7 @@ export class SignupPage implements OnInit {
 
   signUp (email, password) {
     this.authenticationService
-      .RegisterUser(this.email, this.password)
+      .RegisterUser(email.value, password.value)
       .then(res => {
         this.authenticationService.SendVerificationMail()
         this.router.navigate(['verify-email'])
